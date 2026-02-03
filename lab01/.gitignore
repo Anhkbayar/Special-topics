@@ -1,0 +1,115 @@
+# =============================================================================
+# OS / Editor junk
+# =============================================================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+*.swp
+*.swo
+*~
+# VSCode / IntelliJ / Eclipse
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.metadata
+# =============================================================================
+# Python
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+# Packaging / build
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+# Test / coverage
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis
+# =============================================================================
+# Java (Maven / Gradle)
+# =============================================================================
+# Build output
+target/
+**/build/
+!src/**/build/
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+# Gradle
+.gradle/
+!gradle-wrapper.jar
+# Compiled classes / packages
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+# =============================================================================
+# C++ (CMake / build)
+# =============================================================================
+# Object / binary files
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+*.out
+*.app
+# CMake build dirs
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+_deps/
+cmake-build-*/
+# =============================================================================
+# Project-specific
+# =============================================================================
+# Test results / reports
+test_results/
+test_reports/
+coverage_reports/
+*_report.xml
+*_results.json
+# Generated docs (keep /docs in repo)
+docs/generated/
+*_generated.pdf
+# Ignore local scripts output if any
+scripts/*.log
+scripts/*.tmp
