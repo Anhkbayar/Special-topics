@@ -1,7 +1,11 @@
 import unittest
-from main.py
+from src import main
 
-class TestInsterionSort(unittest.TestCase):
+class TestInsertionSort(unittest.TestCase):
     def test_insertion_sort(self):
         lst = [12,3,7,9,14,6,11,2]
-        insertion_sort()
+        main.insertion_sort(lst, len(lst))
+        self.assertEqual([2,3,6,7,9,11,12,14],lst)
+
+if __name__ == "__main__":
+    unittest.main()
