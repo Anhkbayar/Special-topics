@@ -12,7 +12,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 add_executable(InsertionSort src/main.cpp
-                tests/test_main.cpp)
+    tests/test_main.cpp)
 target_link_libraries(InsertionSort PRIVATE Catch2::Catch2WithMain)
 
 set(CMAKE_CXX_STANDARD 20)
