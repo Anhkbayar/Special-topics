@@ -54,7 +54,7 @@ public class ProductServiceTest {
                 .update(category, products);
 
         verify(cacheService)
-                .cacheProducts(category, products);
+                .put(category, products);
 
         verify(searchHistoryService)
                 .record(category, 1);

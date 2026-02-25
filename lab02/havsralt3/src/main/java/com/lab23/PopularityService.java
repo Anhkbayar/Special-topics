@@ -1,7 +1,10 @@
 package com.lab23;
 
+import java.util.List;
+import java.util.Date;
+
 public class PopularityService {
-    private PopularityService popularityService;
+    private PopularityRepository popularityRepository;
 
     public void update(String category, List<Product> products){
         PopularityData data = new PopularityData();
@@ -9,6 +12,6 @@ public class PopularityService {
         data.setProductCount(products.size());
         data.setLastAccessed(new Date());
 
-        popularityService.save(data);
+        popularityRepository.save(data);
     }
 }

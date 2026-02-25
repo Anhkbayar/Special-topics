@@ -1,11 +1,7 @@
 package com.lab23;
 
-public class CacheService {
-    private CacheService cacheService;
+import java.util.List;
 
-    private static final String PRODUCT_CACHE_PREFIX = "products_";
-
-    public void cacheProducts(String category, List<Product> products){
-        cacheService.put(PRODUCT_CACHE_PREFIX + category, products);
-    }
+public interface CacheService {
+    void put(String key, List<Product> products);
 }

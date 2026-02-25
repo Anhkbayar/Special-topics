@@ -18,7 +18,7 @@ public class ProductService {
 
         popularityService.update(category, products);
 
-        cacheService.cacheProducts(category, products);
+        cacheService.put(category, products);
 
         searchHistoryService.record(category, products.size());
 
