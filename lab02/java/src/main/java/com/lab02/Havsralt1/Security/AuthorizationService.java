@@ -1,12 +1,19 @@
 package com.lab02.Havsralt1.Security;
 
-public class AuthorizationService {
-    public void checkOwnershipOrAdmin(User user, OwnerInterface resource){
-        boolean isAdmin = "ADMIN".equals(user.getRole());
-        boolean isOwner = resource.getAuthorId().equals(user.getId());
+import java.util.List;
 
-        if(!isAdmin && !isOwner){
-            throw new UnauthorizedException("Unauthorized action");
-        }
+public class AuthorizationService {
+  private final List<AuthRule> rules;
+
+  public AuthorizationService(List<AuthRule> rules) {
+    this.rules = rules;
+  }
+
+  public void checkOwnershipOrAdmin(User user, OwnerInterface resource) {
+    boolean isAuthorized = rules.stream().anyMatch(rule -> rule.isAuthorized(user, resource));
+
+    if (!isAuthorized) {
+      throw new UnauthorizedException("Unauthorized action");
     }
+  }
 }
