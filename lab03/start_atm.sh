@@ -89,21 +89,35 @@ while true; do
         continue
       fi
 
+      # if ! is_number "$input"; then
+      #   STATUS[$idx]="STOPPED"
+      #   echo "$input" > "${FIFOS[$idx]}"
+      #   sleep 5
+      #   ACTIVE=$(next_active)
+      #   continue
+      # fi
+
       if ! is_number "$input"; then
-        STATUS[$idx]="STOPPED"
         echo "$input" > "${FIFOS[$idx]}"
-        sleep 0.5
-        ACTIVE=$(next_active)
+        sleep 4
         continue
       fi
 
       if [ "$input" -lt 10 ]; then
-        sleep 0.5
+        echo "Heterhii baga mungu baina"
+        sleep 4
+        continue
+      fi
+
+      #nemelt
+      if [ "$input" -gt 10000 ]; then
+        echo "Iim ih mungu bankand l baidag baih"
+        sleep 4
         continue
       fi
 
       echo "$input" > "${FIFOS[$idx]}"
-      sleep 1
+      sleep 4
       continue
       ;;
   esac
