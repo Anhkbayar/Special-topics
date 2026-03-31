@@ -6,5 +6,5 @@ def greet(name: Optional[str]) -> None:
     else:
         print(f"Hello, {name}!")
 
-greet("Ankhbayar")
+greet("Anka")
 greet(None)
