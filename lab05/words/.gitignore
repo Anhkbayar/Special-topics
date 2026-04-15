@@ -26,3 +26,5 @@ out/
 *.tmp
 *.swp
 *~
+
+*.odt#

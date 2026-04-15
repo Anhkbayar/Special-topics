@@ -6,10 +6,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.stream.Collectors;
-import processor.app.sorters.AlphabeticalSorter;
-import processor.app.sorters.CapitalFirstSorter;
-import processor.app.sorters.RemoveDuplicate;
-import processor.app.sorters.ReverseAlphabeticalSorter;
 
 /** Parser */
 public class App {
@@ -27,14 +23,15 @@ public class App {
       words = new BufferedReader(new InputStreamReader(in)).lines().collect(Collectors.toList());
     }
 
-    IWordProcessor processor =
-        switch (option) {
-          case "-asc" -> new AlphabeticalSorter();
-          case "-desc" -> new ReverseAlphabeticalSorter();
-          case "-unique" -> new RemoveDuplicate();
-          case "-capfirst" -> new CapitalFirstSorter();
-          default -> throw new IllegalArgumentException("Unknown option: " + option);
-        };
+    // IWordProcessor processor =
+    //     switch (option) {
+    //       case "-asc" -> new AlphabeticalSorter();
+    //       case "-desc" -> new ReverseAlphabeticalSorter();
+    //       case "-unique" -> new RemoveDuplicate();
+    //       case "-capfirst" -> new CapitalFirstSorter();
+    //       default -> throw new IllegalArgumentException("Unknown option: " + option);
+    //     };
+    IWordProcessor processor = ProcessFactory.getProcessor(option);
 
     List<String> result = processor.process(words);
 
