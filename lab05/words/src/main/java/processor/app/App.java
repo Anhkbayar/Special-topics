@@ -13,6 +13,7 @@ public class App {
     if (args.length < 1) {
       System.out.println("Usage: <options>");
       System.out.println("Options: -asc -desc -unique -capfirst");
+      return;
     }
 
     String option = args[0];

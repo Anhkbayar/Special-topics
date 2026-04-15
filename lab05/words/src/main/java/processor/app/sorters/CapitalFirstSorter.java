@@ -3,11 +3,11 @@ package processor.app.sorters;
 import java.util.ArrayList;
 import java.util.List;
 import processor.app.IWordProcessor;
-import processor.app.ProcessFactory;
 
 public class CapitalFirstSorter implements IWordProcessor {
-  static {
-    ProcessFactory.register("-capfirst", CapitalFirstSorter::new);
+  @Override
+  public String getKey() {
+    return "-capfirst";
   }
 
   @Override

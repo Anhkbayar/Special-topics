@@ -6,8 +6,9 @@ import java.util.List;
 import processor.app.IWordProcessor;
 
 public class ReverseAlphabeticalSorter implements IWordProcessor {
-  static {
-    processor.app.ProcessFactory.register("-reverse", ReverseAlphabeticalSorter::new);
+  @Override
+  public String getKey() {
+    return "-desc";
   }
 
   @Override

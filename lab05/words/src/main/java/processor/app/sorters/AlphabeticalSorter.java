@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import processor.app.IWordProcessor;
-import processor.app.ProcessFactory;
 
 public class AlphabeticalSorter implements IWordProcessor {
-  static {
-    ProcessFactory.register("-asc", AlphabeticalSorter::new);
+  @Override
+  public String getKey() {
+    return "-asc";
   }
 
   @Override
